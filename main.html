@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Landing page for Julie's offer — clear, engaging, and conversion-focused." />
+
+  <!-- Title & Favicon -->
+  <title>Julie’s Landing Page</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Julie’s Landing Page" />
+  <meta property="og:description" content="Discover Julie’s offer and take action today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="https://example.com/preview.jpg" />
+
+  <!-- Stylesheet Link (replace with your CSS) -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Hero Section -->
+  <header class="hero">
+    <nav class="navbar">
+      <a href="/" class="logo">Julie’s Brand</a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#cta">Get Started</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Main Headline That Grabs Attention</h1>
+      <p>Subheading that explains the value in one sentence.</p>
+      <a href="#cta" class="btn-primary">Call to Action</a>
+    </div>
+  </header>
+
+  <!-- Features / Benefits Section -->
+  <section id="features" class="features">
+    <h2>Why Choose This Offer?</h2>
+    <div class="feature-grid">
+      <article>
+        <h3>Benefit One</h3>
+        <p>Brief explanation of how this solves a problem.</p>
+      </article>
+      <article>
+        <h3>Benefit Two</h3>
+        <p>Brief explanation of added value.</p>
+      </article>
+      <article>
+        <h3>Benefit Three</h3>
+        <p>Brief explanation of transformation or outcome.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Social Proof / Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <h2>What People Are Saying</h2>
+    <div class="testimonial-list">
+      <blockquote>
+        <p>“This changed everything for me.”</p>
+        <cite>– Happy Client</cite>
+      </blockquote>
+      <blockquote>
+        <p>“Exactly what I needed, highly recommend.”</p>
+        <cite>– Another Client</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="cta" class="cta">
+    <h2>Ready to Get Started?</h2>
+    <p>Short reminder of the offer’s key value.</p>
+    <form action="/subscribe" method="POST" class="cta-form">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit" class="btn-primary">Join Now</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <p>&copy; <span id="year"></span> Julie’s Brand. All rights reserved.</p>
+  <p class="credit">
+    Created by <a href="https://claritydigitalstudio.com" target="_blank" rel="noopener">Clarity Digital Studio</a>
+  </p>
+</footer>
+
+<script>
+  // Auto-update year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

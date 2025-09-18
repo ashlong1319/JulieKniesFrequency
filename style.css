@@ -30,6 +30,61 @@
 	font-weight: 500;
 }
 
+
+.myLinks {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.myLinks h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* Flexbox layout for cards */
+.link-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;        /* space between cards */
+  flex-wrap: wrap;  /* makes them stack on small screens */
+}
+
+.card {
+  background-color: #fbf5e8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 2rem 1.5rem;
+  flex: 1 1 250px;   /* responsive sizing */
+  max-width: 320px;  /* prevents over-stretch */
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background-color: #2f362f;  /* Julie’s green */
+  color: #fbf5e8;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4a5c4a;  /* lighter hover shade */
+}
+
 .nav-links a:hover {
 	color: #8c4eb8;
 }
@@ -42,4 +97,127 @@ body {
   background-repeat: repeat-y, repeat-y;   /* repeat vertically */
   background-size: 300px auto;   /* keep your mushroom size */
   background-position: left top, right top; /* left & right sides */
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;               /* space between blocks */
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonialBlock {
+  flex: 1 1 22%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Image slot */
+.testimonialBlock img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* If no image, still reserve space */
+.testimonialBlock img:empty,
+.testimonialBlock img[src=""] {
+  display: block;
+  width: 100%;
+  height: 150px;   /* adjust to your preferred slot size */
+  background: transparent;
+}
+
+.testimonialBlock img[src=""],
+.testimonialBlock img:not([src]) {
+  display: none;
+}
+
+.testimonialBlock blockquote {
+  margin: 0;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.testimonialBlock cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Tablet: 2 across */
+@media (max-width: 1024px) {
+  .testimonialBlock {
+    flex: 1 1 45%;
+  }
+}
+
+/* Mobile: full width */
+@media (max-width: 600px) {
+  .testimonialBlock {
+    flex: 1 1 100%;
+  }
+}
+
+/* Wrapper styles */
+.journey {
+  width: 100%;               /* full width of the tan content box */
+  margin: 2rem 0;
+  border: none;               /* remove default borders */
+  background-color: #fbf5e8;  /* subtle contrast color (lighter than tan) */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Summary styles (the clickable header) */
+.journey summary {
+  font-size: 1.5rem;          /* make it feel like a section header */
+  font-weight: bold;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  list-style: none;           /* remove default disclosure triangle in some browsers */
+  color: #2f362f;             /* Julie’s dark green */
+  position: relative;
+}
+
+/* Add custom expand/collapse indicator */
+.journey summary::after {
+  content: "＋";               /* plus sign */
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.journey[open] summary::after {
+  content: "–";               /* minus when open */
+}
+
+/* Content area */
+.journey-content {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;      /* deeper contrast so it “pops” */
+  border-top: 1px solid #ddd;
+}
+
+/* Optional: smooth animation */
+.journey[open] .journey-content {
+  animation: expand 0.3s ease;
+}
+
+@keyframes expand {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

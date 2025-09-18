@@ -1,0 +1,45 @@
+.page-wrapper {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	max-width: 1200px;
+	min-width: 320px;
+}
+
+.content {
+  background-color: #d9c9a3; /* Julie's tan color (replace with exact hex later) */
+  padding: 2rem;
+  min-height: 100vh;     /* makes sure tan fills full height */
+  box-shadow: 0 0 15px rgba(0,0,0,0.2); /* optional depth */
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	gap: 1.5rem;
+	justify-content: center;
+}
+
+.nav-links li {
+	display: inline;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: #333;
+	font-weight: 500;
+}
+
+.nav-links a:hover {
+	color: #8c4eb8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #48483f; /* Julie's dark green */
+  background-image: url("Resources/Images/mushroom.png"), url("Resources/Images/mushroom.png"); /* mushroom image */
+  background-repeat: repeat-y, repeat-y;   /* repeat vertically */
+  background-size: 300px auto;   /* keep your mushroom size */
+  background-position: left top, right top; /* left & right sides */
+}

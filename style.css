@@ -221,3 +221,110 @@ body {
   from { opacity: 0; transform: translateY(-5px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+  
+  .videos, .graphics, .faq {
+  margin: 3rem 0;
+}
+
+.video-grid, .graphic-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.video, .graphic {
+  flex: 1 1 45%;
+  max-width: 500px;
+  text-align: center;
+}
+.graphic {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.graphic h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #2f362f; /* matches brand green */
+}
+
+.responsive-graphic {
+  max-width: 100%;   /* keeps it inside container */
+  height: auto;      /* keeps proportions */
+  border-radius: 8px; /* optional, to soften corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle lift */
+}
+
+.caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.faq details {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f5efe3;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.faq summary {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.faq p {
+  margin-top: 0.5rem;
+}
+
+.page-header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.footer {
+  background: #48483f;   /* Match outside dark green */
+  color: #fff;           /* White text */
+  text-align: center;
+  padding: 2rem 1rem 1rem; /* Top padding larger for space, bottom smaller */
+}
+
+.footer-contact {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  display: flex;               /* Arrange horizontally */
+  justify-content: center;     /* Center in the footer */
+  gap: 2rem;                   /* Space between phone + email */
+  flex-wrap: wrap;             /* Wrap on small screens */
+}
+
+.footer-contact a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-legal {
+  font-size: 0.85rem;
+  color: #ccc;            /* subtle grey for small text */
+  margin-top: 0.5rem;
+}
+
+.footer-legal a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+}

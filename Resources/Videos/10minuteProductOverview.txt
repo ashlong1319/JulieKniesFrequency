@@ -1,0 +1,2 @@
+10 minute product overview video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tvPVvNB52w8?si=F9TGhZJKNfseg56S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

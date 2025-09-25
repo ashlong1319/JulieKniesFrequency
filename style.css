@@ -54,6 +54,10 @@
   background-image: url("Resources/Images/LearnAboutFrequency.png");
 }
 
+.hero-products {
+  /* background-image: url("Resources/Images/LearnAboutFrequency.png"); */
+}
+
 .content {
   background-color: #d9c9a3; /* Julie's tan color (replace with exact hex later) */
   padding: 2rem;

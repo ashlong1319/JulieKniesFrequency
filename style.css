@@ -16,6 +16,10 @@
   padding: 6rem 2rem;
 }
 
+.hero-main {
+	background-image: url("Resources/Images/riseProducts.jpeg");
+}
+
 .hero::after {
   content: "";
   position: absolute;
@@ -28,6 +32,7 @@
   position: relative;
   z-index: 1;
   max-width: 800px;
+  min-height: 400px;
   margin: 0 auto;
 }
 
@@ -42,11 +47,11 @@
 
 /* Page-specific hero backgrounds */
 .hero-mushrooms {
-  background-image: url("Resources/Images/mushroom-hero.jpg");
+  background-image: url("Resources/Images/LearnAboutMushrooms.png");
 }
 
 .hero-frequency {
-  background-image: url("Resources/Images/frequency-hero.jpg");
+  background-image: url("Resources/Images/LearnAboutFrequency.png");
 }
 
 .content {

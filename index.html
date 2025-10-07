@@ -23,13 +23,8 @@
 <body>
 <div class="page-wrapper">
 <main class="content">
-  <!-- Header / Hero Section -->
-  <header class="hero hero-main">
-    <div class="hero-content">
-    </div>
-  </header>
-  
-  <!-- Navigation -->
+
+<!-- Navigation -->
   <nav class="navbar">
       <ul class="nav-links">
 		<li><a href="index.html">Home</a></li>
@@ -40,6 +35,12 @@
 		<li><a href="#contactMe">Contact Me</a></li>
       </ul>
     </nav>
+
+  <!-- Header / Hero Section -->
+  <header class="hero hero-main">
+    <div class="hero-content">
+    </div>
+  </header>
 
   <!-- Shopping Links / Affiliate Section -->
   <section id="myLinks" class="myLinks">
@@ -76,14 +77,14 @@
   </div>
 
   <div class="testimonialBlock">
-  <img src="Resources/Images/placeholder-image.png" alt="Before and after" />
+  <img src="Resources/Images/beforeAfter1.jpg" alt="Before and after" />
     <blockquote>
       <p>“Exactly what I needed, highly recommend.”</p>
       <cite>– Another Client</cite>
     </blockquote>
   </div>
 	<div class="testimonialBlock">
-    <img src="Resources/Images/placeholder-image.png" alt="Before and after" />
+    <img src="Resources/Images/beforeAfter2.jpg" alt="Before and after" />
     <blockquote>
       <p>“This changed everything for me.”</p>
       <cite>– Happy Client</cite>
@@ -91,7 +92,21 @@
   </div>
 
   <div class="testimonialBlock">
-    <img src="Resources/Images/placeholder-image.png" alt="Client photo" />
+    <img src="Resources/Images/beforeAfter3.jpg" alt="Client photo" />
+    <blockquote>
+      <p>“Exactly what I needed, highly recommend.”</p>
+      <cite>– Another Client</cite>
+    </blockquote>
+  </div>
+  <div class="testimonialBlock">
+    <img src="Resources/Images/beforeAfter4.jpg" alt="Client photo" />
+    <blockquote>
+      <p>“Exactly what I needed, highly recommend.”</p>
+      <cite>– Another Client</cite>
+    </blockquote>
+  </div>
+  <div class="testimonialBlock">
+    <img src="Resources/Images/beforeAfter5.jpg" alt="Client photo" />
     <blockquote>
       <p>“Exactly what I needed, highly recommend.”</p>
       <cite>– Another Client</cite>
@@ -147,5 +162,33 @@ Let’s feel good—<i>now.</i></p>
   </div>
 </footer>
 </div>
+
+<script>
+(function () {
+  function openJourney() {
+    const el = document.getElementById("journey");
+    if (el && el.tagName.toLowerCase() === "details") {
+      el.open = true;
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  // 1️⃣ If user lands with #journey from another page — open it
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.hash === "#journey") {
+      openJourney();
+    }
+  });
+
+  // 2️⃣ If they click a #journey link (even on the same page), open it
+  document.querySelectorAll('a[href="#journey"]').forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault(); // prevent default jump
+      history.pushState(null, "", "#journey"); // update the URL
+      openJourney();
+    });
+  });
+})();
+</script>
 </body>
 </html>

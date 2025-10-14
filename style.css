@@ -1,0 +1,400 @@
+.page-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 1200px;
+  min-width: 320px;
+}
+
+/* Hero Section */
+/* Base hero styling */
+.hero {
+  position: relative;
+  background: no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero-main {
+  background-image: url("Resources/Images/frontPageImg.png");
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.2); /* overlay */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  min-height: 400px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+}
+
+/* Page-specific hero backgrounds */
+.hero-mushrooms {
+  background-image: url("Resources/Images/LearnAboutMushrooms.png");
+}
+
+.hero-frequency {
+  background-image: url("Resources/Images/LearnAboutFrequency.png");
+}
+
+.hero-products {
+  background-image: url("Resources/Images/riseProductCollection.png");
+}
+
+.content {
+  background-color: #d9c9a3; /* Julie's tan color (replace with exact hex later) */
+  padding: 2rem;
+  min-height: 100vh;     /* makes sure tan fills full height */
+  box-shadow: 0 0 15px rgba(0,0,0,0.2); /* optional depth */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600; 
+  font-size: 1.2rem; /* slightly larger, good starting point */
+}
+
+/* Optional responsive tweak */
+@media (max-width: 768px) {
+  .nav-links a {
+    font-size: 1rem;
+  }
+}
+
+.myLinks {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.myLinks h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* Flexbox layout for cards */
+.link-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fbf5e8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 2rem 1.5rem;
+  flex: 1 1 250px;
+  max-width: 320px;
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background-color: #2f362f;
+  color: #fbf5e8;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4a5c4a;
+}
+
+.nav-links a:hover {
+  color: #8c4eb8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #48483f;
+  background-image: url("Resources/Images/mushroom.png"), url("Resources/Images/mushroom.png");
+  background-repeat: repeat-y, repeat-y;
+  background-size: 300px auto;
+  background-position: left top, right top;
+}
+
+#testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+#testimonials .testimonialBlock {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 320px;
+}
+
+/* Force images to obey our size */
+#testimonials .testimonialBlock img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 420px !important;     /* ✅ consistent size */
+  object-fit: cover !important; /* ✅ no stretching */
+  object-position: center !important;
+  border-radius: 8px !important;
+  margin-bottom: 1rem !important;
+  display: block !important;
+  background: #eee; /* 👀 helps you see the box shape while testing */
+}
+
+/* Optional: caption area size consistency */
+#testimonials .testimonialBlock blockquote {
+  min-height: 70px;
+}
+
+/* If no image, still reserve space */
+.testimonialBlock img:empty,
+.testimonialBlock img[src=""] {
+  display: block;
+  width: 100%;
+  height: 150px;
+  background: transparent;
+}
+
+.testimonialBlock img[src=""],
+.testimonialBlock img:not([src]) {
+  display: none;
+}
+
+.testimonialBlock blockquote {
+  margin: 0;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 60px; /* keeps caption heights consistent */
+}
+
+.testimonialBlock cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Tablet: 2 across */
+@media (max-width: 1024px) {
+  .testimonialBlock {
+    flex: 1 1 45%;
+  }
+}
+
+/* Mobile: full width */
+@media (max-width: 600px) {
+  .testimonialBlock {
+    flex: 1 1 100%;
+  }
+}
+
+/* Wrapper styles */
+.journey {
+  width: 100%;
+  margin: 2rem 0;
+  border: none;
+  background-color: #fbf5e8;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Summary styles (the clickable header) */
+.journey summary {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  color: #2f362f;
+  position: relative;
+}
+
+.journey summary::after {
+  content: "＋";
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.journey[open] summary::after {
+  content: "–";
+}
+
+/* Content area */
+.journey-content {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.journey[open] .journey-content {
+  animation: expand 0.3s ease;
+}
+
+@keyframes expand {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.videos, .graphics, .faq {
+  margin: 3rem 0;
+}
+
+.video-grid, .graphic-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.video, .graphic {
+  flex: 1 1 45%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.graphic {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.graphic h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #2f362f;
+}
+
+.responsive-graphic {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.faq details {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f5efe3;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.faq summary {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.faq p {
+  margin-top: 0.5rem;
+}
+
+.page-header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer {
+  background: #48483f;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.footer-contact {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-contact a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-legal {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
+.footer-legal a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+}

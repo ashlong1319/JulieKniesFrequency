@@ -59,10 +59,10 @@
 }
 
 .content {
-  background-color: #d9c9a3; /* Julie's tan color (replace with exact hex later) */
+  background-color: #d9c9a3; /* Julie's tan color */
   padding: 2rem;
-  min-height: 100vh;     /* makes sure tan fills full height */
-  box-shadow: 0 0 15px rgba(0,0,0,0.2); /* optional depth */
+  min-height: 100vh;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .nav-links {
@@ -79,15 +79,8 @@
 .nav-links a {
   text-decoration: none;
   color: #333;
-  font-weight: 600; 
-  font-size: 1.2rem; /* slightly larger, good starting point */
-}
-
-/* Optional responsive tweak */
-@media (max-width: 768px) {
-  .nav-links a {
-    font-size: 1rem;
-  }
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .myLinks {
@@ -148,6 +141,7 @@
   color: #8c4eb8;
 }
 
+/* Base page background with mushrooms */
 body {
   margin: 0;
   padding: 0;
@@ -178,34 +172,20 @@ body {
 
 /* Force images to obey our size */
 #testimonials .testimonialBlock img {
-  width: 100% !important;
-  max-width: 100% !important;
-  height: 420px !important;     /* ✅ consistent size */
-  object-fit: cover !important; /* ✅ no stretching */
-  object-position: center !important;
-  border-radius: 8px !important;
-  margin-bottom: 1rem !important;
-  display: block !important;
-  background: #eee; /* 👀 helps you see the box shape while testing */
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* adjust if you want smaller cards */
+  object-fit: contain; /* ensures the full image is visible */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: block;
+  background: #eee;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Optional: caption area size consistency */
+
 #testimonials .testimonialBlock blockquote {
   min-height: 70px;
-}
-
-/* If no image, still reserve space */
-.testimonialBlock img:empty,
-.testimonialBlock img[src=""] {
-  display: block;
-  width: 100%;
-  height: 150px;
-  background: transparent;
-}
-
-.testimonialBlock img[src=""],
-.testimonialBlock img:not([src]) {
-  display: none;
 }
 
 .testimonialBlock blockquote {
@@ -213,7 +193,7 @@ body {
   font-style: italic;
   font-size: 1rem;
   line-height: 1.5;
-  min-height: 60px; /* keeps caption heights consistent */
+  min-height: 60px;
 }
 
 .testimonialBlock cite {
@@ -249,7 +229,6 @@ body {
   overflow: hidden;
 }
 
-/* Summary styles (the clickable header) */
 .journey summary {
   font-size: 1.5rem;
   font-weight: bold;
@@ -272,22 +251,12 @@ body {
   content: "–";
 }
 
-/* Content area */
 .journey-content {
   padding: 1rem 1.5rem;
   font-size: 1rem;
   color: #333;
   background-color: #fff;
   border-top: 1px solid #ddd;
-}
-
-.journey[open] .journey-content {
-  animation: expand 0.3s ease;
-}
-
-@keyframes expand {
-  from { opacity: 0; transform: translateY(-5px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
 
 .videos, .graphics, .faq {
@@ -307,55 +276,11 @@ body {
   text-align: center;
 }
 
-.graphic {
-  text-align: center;
-  margin: 2rem auto;
-}
-
-.graphic h2 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: #2f362f;
-}
-
 .responsive-graphic {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.caption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #444;
-}
-
-.faq details {
-  margin: 1rem 0;
-  padding: 1rem;
-  background: #f5efe3;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.faq summary {
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.faq p {
-  margin-top: 0.5rem;
-}
-
-.page-header {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.page-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
 }
 
 .footer {
@@ -380,10 +305,6 @@ body {
   font-weight: 600;
 }
 
-.footer-contact a:hover {
-  text-decoration: underline;
-}
-
 .footer-legal {
   font-size: 0.85rem;
   color: #ccc;
@@ -395,6 +316,122 @@ body {
   text-decoration: none;
 }
 
-.footer-legal a:hover {
-  text-decoration: underline;
+/* ------------------------------
+   RESPONSIVE FIXES (CLEAN FINAL)
+   ------------------------------ */
+
+/* =======================================================
+   FINAL RESPONSIVE + CENTER + IMAGE FIX — Oct 2025
+   ======================================================= */
+
+/* Tablet and smaller screens (≤900px) */
+@media (max-width: 900px) {
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #48483f;
+    background-image: url("Resources/Images/mushroom.png"), url("Resources/Images/mushroom.png");
+    background-repeat: repeat-y, repeat-y;
+    background-size: 150px auto;
+    background-position: left top, right top;
+    overflow-x: hidden; /* stop horizontal scroll */
+  }
+
+  /* Center and constrain the tan container */
+  .page-wrapper,
+  main.content {
+    background-color: #d9c9a3;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    float: none;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  /* Navigation stack */
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  /* Hero section adjust */
+  .hero {
+    padding: 3rem 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+  .hero-content {
+    min-height: auto;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  /* Cards: single column */
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 1.25rem 1rem;
+  }
+
+  /* Grid sections: center items */
+  .link-grid,
+  .video-grid,
+  .graphic-grid {
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Responsive media */
+  img,
+  iframe,
+  .responsive-graphic,
+  #testimonials img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    margin: 0 auto;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+
+  /* Testimonials: single column on mobile */
+  #testimonials {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  /* Footer: stacked layout */
+  .footer-contact {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Small phones (≤480px): slightly smaller mushrooms */
+@media (max-width: 480px) {
+  body {
+    background-size: 100px auto;
+  }
+
+  main.content {
+    width: 92%;
+    max-width: 480px;
+    padding: 1rem;
+  }
+}
+
+/* Large monitors */
+@media (min-width: 1600px) {
+  .page-wrapper {
+    max-width: 1400px;
+  }
 }
